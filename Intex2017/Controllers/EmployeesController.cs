@@ -15,16 +15,29 @@ namespace Intex2017.Controllers
     {
         private IntexContext db = new IntexContext();
 
-
-        public ActionResult empHome()
+        [Authorize]
+        public ActionResult empHome(int id)
         {
-            return View();
+            IEnumerable<Employee> employee =
+                db.Database.SqlQuery<Employee>("SELECT Employee.empID, Employee.empFirstName, Employee.empLastName, " +
+                "Employee.empSSNHash,Employee.empWage, Employee.empPassword, Employee.empEmail, Employee.empPassword " +
+                "FROM Employee " +
+                "Where Employee.empID = " + id);
+
+            return View(employee.FirstOrDefault());
         }
 
         // GET: Employees
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Index(int id)
         {
-            return View(db.Employees.ToList());
+            IEnumerable<Employee> employee =
+                db.Database.SqlQuery<Employee>("SELECT Employee.empID, Employee.empFirstName, Employee.empLastName, " +
+                "Employee.empSSNHash,Employee.empWage, Employee.empPassword, Employee.empEmail, Employee.empPassword " +
+                "FROM Employee " +
+                "Where Employee.empID = " + id);
+
+            return View(employee.FirstOrDefault());
         }
 
         // GET: Employees/Details/5
@@ -68,16 +81,17 @@ namespace Intex2017.Controllers
         // GET: Employees/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            if (id != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+               Employee employee = db.Employees.Find(id);
+
+                return View(employee);
             }
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
+            else
             {
-                return HttpNotFound();
+                return RedirectToAction("Index", "Employees");
             }
-            return View(employee);
+
         }
 
         // POST: Employees/Edit/5
@@ -91,7 +105,7 @@ namespace Intex2017.Controllers
             {
                 db.Entry(employee).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = employee.empID });
             }
             return View(employee);
         }

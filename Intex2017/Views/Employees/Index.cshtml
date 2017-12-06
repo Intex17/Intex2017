@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Intex2017.Models.Employee>
+﻿@model Intex2017.Models.Employee
 
 @{
     ViewBag.Title = "Index";
@@ -6,10 +6,10 @@
 
 <ul class="nav nav-tabs">
     <li class="active">
-    <li>@Html.ActionLink("Home", "empHome", "Employees")</li>
-    <li><a href="#">Menu 2</a></li>
-    <li><a href="#">Menu 3</a></li>
-    <li>@Html.ActionLink("Employee Details", "Index", "Employees")</li>
+    <li>@Html.ActionLink("Home", "empHome", new { id = Model.empID })</li>
+    <li><a href="#">Schedule</a></li>
+    <li><a href="#">Current Tasks</a></li>
+    <li>@Html.ActionLink("Employee Details", "Index", new { id = Model.empID })</li>
 </ul>
 
 <table class="table">
@@ -35,32 +35,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.empFirstName)
+            @Html.DisplayFor(model => model.empFirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.empLastName)
+            @Html.DisplayFor(model => model.empLastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.empSSNHash)
+            @Html.DisplayFor(model => model.empSSNHash)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.empWage)
+            @Html.DisplayFor(model => model.empWage)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.empEmail)
+            @Html.DisplayFor(model => model.empEmail)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.empPassword)
+            @Html.DisplayFor(model => model.empPassword)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.empID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.empID }) 
+            @Html.ActionLink("Edit", "Edit", new { id=Model.empID }) |
+            @Html.ActionLink("Details", "Details", new { id=Model.empID }) 
         </td>
     </tr>
-}
+
 
 </table>
 <br />
