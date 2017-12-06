@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Intex2017.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<ul class="nav nav-tabs">
+    <li class="active">
+    <li>@Html.ActionLink("Home", "empHome", "Employees")</li>
+    <li><a href="#">Menu 2</a></li>
+    <li><a href="#">Menu 3</a></li>
+    <li>@Html.ActionLink("Employee Details", "Index", "Employees")</li>
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empSSNHash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empWage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empPassword)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.empFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empSSNHash)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empWage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empPassword)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.empID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.empID }) 
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+    <p>  You may only change your email and password.  To change other settings, please contact a Supervisor. </p>
+</div>
+ 

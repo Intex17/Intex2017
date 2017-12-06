@@ -1,0 +1,90 @@
+﻿@model Intex2017.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderStatusID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderStatusID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderDateDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderDateDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderPctCompletion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderPctCompletion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderCustomerComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderCustomerComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderDeliveryPaper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderDeliveryPaper)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderDeliveryElectronic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderDeliveryElectronic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.orderAdvancePayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.orderAdvancePayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cleintID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cleintID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.orderNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

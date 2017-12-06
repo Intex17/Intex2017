@@ -1,0 +1,71 @@
+﻿@model Intex2017.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empSSNHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empSSNHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empWage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empWage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empPassword)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

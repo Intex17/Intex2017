@@ -1,0 +1,74 @@
+﻿@model Intex2017.Models.Representative
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Representative</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.repFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repPasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repPasswordHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.repID }) |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.repID })
+</p>

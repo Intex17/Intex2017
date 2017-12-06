@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Intex2017.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderStatusID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDateDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderPctCompletion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderCustomerComment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDeliveryPaper)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDeliveryElectronic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderAdvancePayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cleintID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderStatusID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDateDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderPctCompletion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderCustomerComment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDeliveryPaper)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDeliveryElectronic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderAdvancePayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cleintID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.orderNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.orderNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.orderNumber })
+        </td>
+    </tr>
+}
+
+</table>

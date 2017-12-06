@@ -1,0 +1,80 @@
+﻿@model Intex2017.Models.Representative
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Representative</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.repFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.repPasswordHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.repPasswordHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clientID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,76 @@
+﻿@model Intex2017.Models.Representative
+@{
+    ViewBag.Title = "Index";
+}
+
+<ul class="nav nav-tabs">
+    <li class="active">
+    <li>@Html.ActionLink("Home", "repHome", "Representatives")</li>
+    <li><a href="#">In Progress Order</a></li>
+    <li><a href="#">My Recent Orders</a></li>
+    <li><a href="#">Create Order</a></li>
+    <li>@Html.ActionLink("My Details", "Index", "Representatives")</li>
+</ul>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+@Model.repID
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=> model.repFirstName) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.repPasswordHash)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.repFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.repLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.repPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.repEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.repUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.repPasswordHash)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.repID }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.repID })
+        </td>
+    </tr>
+
+
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="text-center">
+  <p>  You may only change your phone number, email, usernme, or password.  To change other settings, please contact Northwest Labs. </p>
+</div>

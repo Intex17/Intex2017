@@ -1,0 +1,65 @@
+﻿@model Intex2017.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empSSNHash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empSSNHash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empWage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empWage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empPassword)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
