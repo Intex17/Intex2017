@@ -1,21 +1,23 @@
 ﻿@model Intex2017.Models.Representative
+
 @{
     ViewBag.Title = "Index";
 }
 
 <ul class="nav nav-tabs">
     <li class="active">
-    <li>@Html.ActionLink("Home", "repHome", "Representatives")</li>
-    <li><a href="#">In Progress Order</a></li>
+    <li>@Html.ActionLink("Home", "repHome", new { id = Model.repID })</li>
+    <li><a href="#">Orders In Progress </a></li>
     <li><a href="#">My Recent Orders</a></li>
     <li><a href="#">Create Order</a></li>
-    <li>@Html.ActionLink("My Details", "Index", "Representatives")</li>
+    <li>@Html.ActionLink("My Details", "Index", new { id = Model.repID })</li>
 </ul>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
-@Model.repID
+
+
 <table class="table">
     <tr>
         <th>

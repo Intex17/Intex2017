@@ -18,18 +18,14 @@ namespace Intex2017.Controllers
         [Authorize]
         public ActionResult repHome(int id)
         {
-            List<Representative> myRep = new List<Representative>();
-            myRep = db.Representatives.ToList();
+            IEnumerable<Representative> representative =
+                db.Database.SqlQuery<Representative>("SELECT Representative.repID, Representative.repFirstName, " +
+                " Representative.repLastName, Representative.repPhoneNumber, Representative.repEmail, " +
+                " Representative.repUserName, Representative.repPasswordHash, Representative.clientID " +
+                "FROM Representative " +
+                "WHERE Representative.repID = " + id);
 
-            Representative representative = db.Representatives.Find(id);
-
-            ViewBag.repID = myRep[id].repID;
-            ViewBag.repFirstName = myRep[id].repFirstName;
-            ViewBag.repLastName = myRep[id].repLastName;
-            ViewBag.repPhoneNumber = myRep[id].repPhoneNumber;
-            ViewBag.repEmail = myRep[id].repEmail;
-
-            return View();
+            return View(representative.FirstOrDefault());
         }
 
         // GET: Representatives
@@ -111,7 +107,7 @@ namespace Intex2017.Controllers
             {
                 db.Entry(representative).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = representative.repID });
             }
             return View(representative);
         }

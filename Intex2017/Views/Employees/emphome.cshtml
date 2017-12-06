@@ -1,4 +1,5 @@
-﻿
+﻿@model Intex2017.Models.Employee
+
 @{
     ViewBag.Title = "Employee Home";
 }
@@ -6,12 +7,12 @@
 
 <ul class="nav nav-tabs">
     <li class="active">
-    <li>@Html.ActionLink("Home", "empHome", "Employees")</li>
-    <li><a href="#">To Do Orders</a></li>
-    <li><a href="#">In Progress Orders</a></li>
-    <li>@Html.ActionLink("Employee Details", "Index", "Employees")</li>
+    <li>@Html.ActionLink("Home", "empHome", new { id = Model.empID })</li>
+    <li><a href="#">Schedule</a></li>
+    <li><a href="#">Current Tasks</a></li>
+    <li>@Html.ActionLink("Employee Details", "Index", new { id = Model.empID })</li>
 </ul>
 
 <div>
-    <h4>Welcome to Northwest Labs.</h4>
+    <h4>Welcome @Model.empFirstName to Northwest Labs.</h4>
 </div>

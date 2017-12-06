@@ -10,6 +10,7 @@ namespace Intex2017.Models
         public IEnumerable<Client> Clients { get; set; }
         public IEnumerable<Representative> Representative { get; set; }
         public IEnumerable<Order> Order { get; set; }
+        public IEnumerable<Employee> Employee { get; set; }
 
     }
 }
