@@ -1,14 +1,19 @@
 ﻿@model IEnumerable<Intex2017.Models.Order>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Completed";
 }
 
-<h2>Index</h2>
+<ul class="nav nav-tabs">
+    <li class="active">
+    <li>@Html.ActionLink("Home", "repHome", "Representatives", new { id = ViewBag.myid },null)</li>
+    <li>@Html.ActionLink("Orders in Progress", "IndexProgress", "Orders", new { id = ViewBag.myid },null)</li>
+    <li>@Html.ActionLink("Completed Orders", "IndexCompleted", "Orders", new { id = ViewBag.myid },null)</li>
+    <li>@Html.ActionLink("Create Order", "Create", "Orders", new { id = ViewBag.myid }, null)</li>
+    <li>@Html.ActionLink("My Details", "Index", "Representatives", new { id = ViewBag.myid },null)</li>
+</ul>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+<br />
 
 <table class="table">
     <tr>
@@ -35,6 +40,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.orderAdvancePayment)
+        </th>
+        <th>
+            @Html.DisplayName("Reports")
         </th>
         <th></th>
     </tr>
@@ -66,11 +74,11 @@
             @Html.DisplayFor(modelItem => item.orderAdvancePayment)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.orderNumber }) |
-            @Html.ActionLink("Details", "Details", new { id=item.orderNumber }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.orderNumber })
+            <a href="@Url.Content("~/Content/media/Reports.pdf")" class="btn btn-info" target="_blank">Download File</a>
         </td>
     </tr>
 }
 
 </table>
+
+<br /><br /><br /><br /><br /><br /><br /><br />

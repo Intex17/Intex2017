@@ -4,15 +4,17 @@
     ViewBag.Title = "Employee Home";
 }
 
+<br />
 
 <ul class="nav nav-tabs">
     <li class="active">
-    <li>@Html.ActionLink("Home", "empHome", new { id = Model.empID })</li>
-    <li><a href="#">Schedule</a></li>
-    <li><a href="#">Current Tasks</a></li>
-    <li>@Html.ActionLink("Employee Details", "Index", new { id = Model.empID })</li>
-</ul>
-
+    <li>@Html.ActionLink("Home", "empHome", "Employees", new { id = Model.empID },null)</li>
+    <li>@Html.ActionLink("Current Tasks", "Index","Tasks", new { id = Model.empID },null)</li>
+    <li>@Html.ActionLink("Completed Tasks", "IndexCompleted", "Tasks", new { id = Model.empID }, null)</li>
+    <li>@Html.ActionLink("Employee Details", "Index", "Employees", new { id = Model.empID },null)</li>
+</ul> 
+<br /><br />
 <div>
     <h4>Welcome @Model.empFirstName to Northwest Labs.</h4>
 </div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Intex2017.Models.Tasks>
+
+@{
+    ViewBag.Title = "Completed Tasks";
+}
+
+<br />
+
+<ul class="nav nav-tabs">
+    <li class="active">
+    <li>@Html.ActionLink("Home", "empHome", "Employees", new { id = ViewBag.empid }, null)</li>
+    <li>@Html.ActionLink("Current Tasks", "Index", "Tasks", new { id = ViewBag.empid }, null)</li>
+    <li>@Html.ActionLink("Completed Tasks", "IndexCompleted", "Tasks", new { id = ViewBag.empid }, null)</li>
+    <li>@Html.ActionLink("Employee Details", "Index", "Employees", new { id = ViewBag.empid }, null)</li>
+</ul>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.taskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taskDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tubeNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.taskName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taskDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tubeNumber)
+        </td>
+        <td>
+            
+            | @Html.ActionLink("Details", "Details", new { id=item.taskID }) |
+            
+        </td>
+    </tr>
+}
+
+</table>

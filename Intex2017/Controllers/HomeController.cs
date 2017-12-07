@@ -45,7 +45,7 @@ namespace Intex2017.Controllers
                     | ( (string.Equals(email, myRep[iCount].repUserName)) && (string.Equals(password, myRep[iCount].repPasswordHash)) ) )
                 {
                     FormsAuthentication.SetAuthCookie(email, rememberMe);
-                    return RedirectToAction("Index", "Representatives", new { id = myRep[iCount].repID });
+                    return RedirectToAction("repHome", "Representatives", new { id = myRep[iCount].repID });
                 }
             }
 
@@ -56,7 +56,7 @@ namespace Intex2017.Controllers
                    
                 {
                     FormsAuthentication.SetAuthCookie(email, rememberMe);
-                    return RedirectToAction("Index", "Employees", new { id = myEmp[iCount].empID });
+                    return RedirectToAction("empHome", "Employees", new { id = myEmp[iCount].empID });
                 }
             }
 

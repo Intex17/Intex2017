@@ -1,0 +1,50 @@
+﻿@model Intex2017.Models.Tasks
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tasks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.taskName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.taskDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tubeNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tubeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.taskID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

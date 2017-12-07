@@ -6,13 +6,14 @@
 
 <ul class="nav nav-tabs">
     <li class="active">
-    <li>@Html.ActionLink("Home", "repHome", new { id = Model.repID })</li>
-    <li><a href="#">Orders In Progress </a></li>
-    <li><a href="#">My Recent Orders</a></li>
-    <li><a href="#">Create Order</a></li>
-    <li>@Html.ActionLink("My Details", "Index", new { id = Model.repID })</li>
+    <li>@Html.ActionLink("Home", "repHome", "Representatives", new { id = Model.repID },null)</li>
+    <li>@Html.ActionLink("Orders in Progress", "IndexProgress", "Orders", new { id = Model.repID },null)</li>
+    <li>@Html.ActionLink("Completed Orders", "IndexCompleted", "Orders", new { id = Model.repID },null)</li>
+    <li>@Html.ActionLink("Create Order", "Create", "Orders", new { id = Model.repID }, null)</li>
+    <li>@Html.ActionLink("My Details", "Index", "Representatives", new { id = Model.repID },null)</li>
 </ul>
-
+<br /><br />
 <div>
-    <h4>Hello, @Model.repFirstName welcome to Northwest Labs.</h4>
+    <h4>  Hello, @Model.repFirstName welcome to Northwest Labs.</h4>
 </div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

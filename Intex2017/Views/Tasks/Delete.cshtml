@@ -1,0 +1,56 @@
+﻿@model Intex2017.Models.Tasks
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tasks</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.taskName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.taskDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taskDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tubeNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tubeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

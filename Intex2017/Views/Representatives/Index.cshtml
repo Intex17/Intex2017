@@ -6,17 +6,14 @@
 
 <ul class="nav nav-tabs">
     <li class="active">
-    <li>@Html.ActionLink("Home", "repHome", new { id = Model.repID })</li>
-    <li><a href="#">Orders In Progress </a></li>
-    <li><a href="#">My Recent Orders</a></li>
-    <li><a href="#">Create Order</a></li>
-    <li>@Html.ActionLink("My Details", "Index", new { id = Model.repID })</li>
+    <li>@Html.ActionLink("Home", "repHome", "Representatives", new { id = Model.repID },null)</li>
+    <li>@Html.ActionLink("Orders in Progress", "IndexProgress", "Orders", new { id = Model.repID }, null)</li>
+    <li>@Html.ActionLink("Completed Orders", "IndexCompleted", "Orders", new { id = Model.repID }, null)</li>
+    <li>@Html.ActionLink("Create Order", "Create", "Orders", new { id = Model.repID }, null)</li>
+    <li>@Html.ActionLink("My Details", "Index", "Representatives", new { id = Model.repID },null)</li>
 </ul>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-
+<br />
 
 <table class="table">
     <tr>
@@ -76,3 +73,5 @@
 <div class="text-center">
   <p>  You may only change your phone number, email, usernme, or password.  To change other settings, please contact Northwest Labs. </p>
 </div>
+<div style="height:9px;"></div>
+<br /><br /><br />
