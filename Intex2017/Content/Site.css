@@ -1,17 +1,18 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    overflow-x: hidden;
+    font-family: 'Maitree', serif;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
+    font-family: 'Maitree', serif;
+    /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
+}
+
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -21,4 +22,72 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* Custom Font */
+
+h1 {
+    font-weight: 900;
+    font-size: 36px;
+    font-family: 'Maitree', serif;
+    
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 30px;
+    font-family: 'Maitree', serif;
+    
+}
+
+h5 {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'Maitree', serif;
+   
+}
+
+h6 {
+    font-weight: 300;
+    font-size: 15px;
+    font-family: 'Maitree', serif;
+    
+}
+
+p {
+    font-weight: 300;
+    font-size: 15px;
+    font-family: 'Maitree', serif;
+    }
+
+/* Custom Colors */
+
+.white {
+    color: #F3F9D2;
+}
+
+.black {
+    color: #1C1C1C;
+}
+
+.lightblue {
+    background-color: #6ABEA7;
+}
+
+.mediumblue {
+    background-color: #07BEB8;
+}
+
+.neutral {
+    background-color: #BFB48F;
+}
+
+.maroon {
+    background-color: #53131E;
+}
+.bluegrey{
+    background-color:#595F72;
+}
+.lightbluegrey{
+    background-color:#EAF2EF;
 }
