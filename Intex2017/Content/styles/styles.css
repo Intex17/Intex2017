@@ -1,0 +1,293 @@
+﻿/******************* Navbar ******************/
+
+#primary-logo {
+    height: 65px;
+    padding-top: 10px;
+    position: relative;
+    bottom: 7px;
+}
+
+.navbar-container {
+    margin-top: 10px;
+}
+
+.navbar {
+    background-color:white;
+    border-bottom: 1px #e5e5e5 solid;
+}
+
+.jumbotron {
+    margin-top: 50px;
+}
+
+.navbar-nav {
+    float: right;
+    margin-top: 15px;
+}
+
+.navbar-collapse {
+    padding-right: 0px;
+}
+
+.nav-page {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+    .nav-page > a {
+        color: black;
+    }
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding: 10px;
+}
+
+.nav > li > a:hover {
+    background: #6ABEA7;
+    color: #1C1C1C;
+    border-radius: 5px;
+}
+
+#learn-more-btn {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.body-content {
+    margin-top: 30px;
+}
+
+.jumbotron {
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45) ), url('../img/test_tube.jpg');
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+h2 {
+    font-family: 'Maitree';
+}
+
+#jumbo-announce {
+    font-family: 'Maitree';
+    color: white;
+    font-size: 38px;
+    width: 80%;
+}
+
+/******************* Footer ******************/
+
+footer {
+    height: 200px;
+    background: #21171e;
+    color: white;
+    margin-top: 50px;
+}
+
+#footer-logo {
+    height: 54px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+#footer-contact {
+    height: 200px;
+    border-left: 1px solid #484848;
+}
+
+#earl-quote {
+    font-size: 18px;
+    height: 125px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border-top: 1px solid #484848;
+    padding-top: 41px;
+}
+
+#author {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.footer-icon {
+    height: 28px;
+    margin: 23px;
+}
+
+#phone-icon {
+    height: 24px;
+}
+
+#copyright {
+    font-size: 12px;
+}
+
+/************ Home Page & Stories *************/
+
+.ssbox {
+    min-height: 200px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+#home-help-text, .home-story-title {
+    font-family: 'Maitree';
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.home-story-title {
+    font-size: 18px;
+}
+
+#home-why-help-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+#home-why-help {
+    margin-top: 40px;
+}
+
+.home-step {
+    margin-top: 15px;
+}
+
+.home-step-header {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.home-step-paragraph {
+    line-height: 1.2;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#home-success-header {
+    margin: 40px 0px 20px 0px;
+}
+
+.box-container {
+    margin: 0 auto;
+}
+
+    .box-container h3 {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .box-container img:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+    }
+
+.img-margins {
+    margin-top: 40px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+/******************** About Page ********************/
+
+#About-Us, .about-header, .myVideo, #Video, #story, #video-text, #testimonial-header, #testimonial-text {
+    text-align: center;
+}
+
+.about_onpage_links {
+    text-align: center;
+    color: #21171e;
+}
+
+.carousel-inner > .item > img {
+    height: 370px;
+    width: 555px;
+}
+/*
+#about-row {
+    padding: 15px;
+    margin: 15px;
+}*/
+
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+/***************************************** Mobile Styles ***********************************************/
+/*******************************************************************************************************/
+/*******************************************************************************************************/
+
+@media only screen and (max-width: 768px) and (max-height: 768px) {
+
+    /******************* Mobile Navbar ******************/
+
+    #primary-logo {
+        margin-left: 25px;
+    }
+
+    .navbar-toggle {
+        margin-top: 13px;
+    }
+
+    .nav > li > a {
+        position: relative;
+        right: 25px;
+        bottom: 10px;
+    }
+
+    .navbar-nav {
+        margin-right: -6px;
+        text-align: end;
+    }
+
+    /******************* Mobile Jumbotron ******************/
+
+    #jumbo-announce {
+        font-size: 27px;
+        width: 100%;
+    }
+
+    /******************* Mobile Footer ******************/
+
+    footer {
+        height: 365px;
+    }
+
+    /*********************Contact Form************/
+
+    .red {
+        color: red;
+    }
+
+    .form-area {
+        background-color: #FAFAFA;
+        padding: 10px 40px 60px;
+        margin: 10px 0px 60px;
+        border: 1px solid GREY;
+    }
+}

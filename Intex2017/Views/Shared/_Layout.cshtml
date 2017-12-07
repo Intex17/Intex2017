@@ -3,26 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Northwest Labs</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/styles/styles.css")
+    @Styles.Render("~/Content/Site.css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Maitree:400,500,700" rel="stylesheet">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container navbar-container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar bdark-black"></span>
+                    <span class="icon-bar bdark-black"></span>
+                    <span class="icon-bar bdark-black"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="@Url.Action("Index", "Home")">
+                    <img id="primary-logo" class="img-responsive" src="~/Content/img/Northwest.png" style ="width:100px; height:60px;"/>
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="color:#1C1C1C">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Sign In", "Login", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -30,10 +36,33 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+      
     </div>
+    <footer>
+
+        <div class="row bluegrey white">
+            <div class="col-sm-5 text-center">
+                <a href="@Url.Action("Index", "Home")">
+                    <img id="footer-logo" src="~/Content/img/Northwest.png" style="width:250px; height:150px;" />
+                </a>
+                <p class="white" id="copyright">&copy; @DateTime.Now.Year Northwest Labs. All Rights Reserved.</p>
+            </div>
+            <div id="footer-contact" class="col-sm-7 text-center white">
+                <div>
+                    <a href="@Url.Action("Contact", "Home")">
+                        <img class="footer-icon" src="~/Content/img/close-envelope.svg" />
+                    </a>
+                    <a href="tel:8012944060">
+                        <img id="phone-icon" class="footer-icon" src="~/Content/img/call-answer.svg" />
+                    </a>
+                </div>
+                <div id="earl-quote">
+                    "Not just another lab, but people who are passionate about what they do."
+                    <div id="author">&mdash; Northwest Labs</div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
